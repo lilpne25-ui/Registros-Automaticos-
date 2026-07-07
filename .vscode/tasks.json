@@ -1,0 +1,269 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Package Electron EXE",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"Set-Location .\\desktop; npm run package-win"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

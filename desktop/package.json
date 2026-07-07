@@ -1,0 +1,42 @@
+{
+  "name": "laser-control-desktop",
+  "version": "0.1.0",
+  "description": "Pequeña app para controlar el servidor del Sistema de Grabado Láser (ON/OFF/Abrir)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-win-base": "electron-packager . LaserControl --platform=win32 --arch=x64 --out=..\\dist --overwrite",
+    "prepare-server-runtime": "node build-server-runtime.js",
+    "package-win": "node build-package.js",
+    "installer-win": "npm run prepare-server-runtime && electron-builder --win nsis && node ..\\scripts\\validate_release_artifacts.js --package-root ..\\dist\\win-unpacked"
+  },
+  "build": {
+    "appId": "com.innovax.lasercontrol",
+    "productName": "LaserControl",
+    "asar": false,
+    "directories": {
+      "output": "..\\dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico"
+    },
+    "extraResources": [
+      { "from": "./server-runtime", "to": "server" }
+    ]
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-packager": "^17.1.0",
+    "electron-builder": "^24.13.3"
+  }
+}

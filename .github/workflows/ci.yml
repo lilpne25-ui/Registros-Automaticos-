@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  release-gate:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    env:
+      PUPPETEER_SKIP_DOWNLOAD: "true"
+      npm_config_audit: "false"
+      npm_config_fund: "false"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Install desktop dependencies
+        run: npm --prefix desktop ci
+
+      - name: Build server runtime
+        run: node desktop/build-server-runtime.js
+
+      - name: Build Windows package
+        run: node desktop/build-package.js
+
+      - name: Validate release artifacts
+        run: node scripts/validate_release_artifacts.js --require-package

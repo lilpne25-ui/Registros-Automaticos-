@@ -1,0 +1,1061 @@
+/* Clean stylesheet extracted from original HTML <style> */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --success-color: #27ae60;
+    --warning-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #e74c3c;
+}
+
+.status-indicator.connected {
+    background-color: #27ae60;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.nav-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+    border-bottom: 3px solid var(--secondary-color);
+    font-weight: bold;
+}
+
+.tab-content {
+    /* Mostrar siempre (no usar display:none para permitir transiciones).
+       Ocultamos visualmente con opacity/transform y bloqueamos eventos cuando no está activo. */
+    display: block;
+    opacity: 0;
+    transform: translateY(8px);
+    max-height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.tab-content.active {
+    opacity: 1;
+    transform: translateY(0);
+    /* max-height muy grande para permitir reportes con muchas imágenes/lotes */
+    max-height: none;
+    overflow: visible;
+    pointer-events: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--light-color);
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: #219653;
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+}
+
+.btn-warning:hover {
+    background-color: #c0392b;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.kpi-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.kpi-target {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.good {
+    color: var(--success-color);
+}
+
+.warning {
+    color: var(--warning-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Modal: Enviar a lotes -> modo copiar */
+.lote-chooser-copy-wrap {
+    margin-top: 10px;
+}
+
+.lote-chooser-copy-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.lote-chooser-copy-hint {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+/* Evitar style="..." en markup (buscador rápido) */
+.search-bar-row {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-part-input {
+    flex: 1;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.btn-compact {
+    padding: 10px 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.lot-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+}
+
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.signature-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signature-line {
+    width: 200px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 0.5rem;
+}
+
+.chart-container {
+    height: 300px;
+    margin: 2rem 0;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    /* Asegurar estado inicial para animaciones */
+    transform: translateY(12px);
+    opacity: 0;
+}
+
+/* Cuando el modal se muestra (por JS usando display:flex) la animación se ejecutará al entrar en DOM visual */
+.modal .modal-content {
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Aplicar la animación cuando el modal sea visible (JS pone display:flex) */
+.modal[style*="display:flex"] .modal-content,
+.modal[style*='display: flex'] .modal-content {
+    animation: slideUp 0.28s ease-out both;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.close {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.qr-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.qr-code {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.server-info {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.manual-mode {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.sync-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.server-status-text {
+    margin-left: 10px;
+    color: #666;
+}
+
+.sync-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #95a5a6;
+}
+
+.sync-indicator.synced {
+    background-color: #27ae60;
+}
+
+.sync-indicator.pending {
+    background-color: #f39c12;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.recent-registrations {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.registration-item {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+.registration-item:last-child {
+    border-bottom: none;
+}
+
+/* ============================================
+   Firmas en reportes (captura en pantalla)
+   ============================================ */
+.report-signatures-box {
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.report-signatures-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.report-signatures-title {
+    font-weight: 700;
+}
+
+.report-signatures-status {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.report-signatures-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+}
+
+.report-signatures-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #eef2f7;
+    border-radius: 10px;
+    background: #fbfbfc;
+}
+
+.report-signatures-item .sig-name {
+    font-weight: 600;
+}
+
+.report-signatures-item .sig-meta {
+    font-size: 12px;
+    color: #475569;
+    white-space: nowrap;
+}
+
+.report-signatures-actions {
+    margin-top: 10px;
+}
+
+.report-signature-thumb {
+    width: 90px;
+    height: 42px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    object-fit: contain;
+}
+
+/* Modal de firma */
+.signature-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 2500;
+}
+
+.signature-modal[aria-hidden="false"] {
+    display: flex;
+}
+
+.signature-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+.signature-modal-content {
+    position: relative;
+    width: min(900px, 95vw);
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    z-index: 2501;
+}
+
+.signature-modal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.signature-modal-title {
+    font-weight: 800;
+    font-size: 16px;
+    color: #0f172a;
+}
+
+.signature-modal-subtitle {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.signature-canvas-wrap {
+    width: 100%;
+    height: 260px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.signature-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    touch-action: none;
+}
+
+.signature-modal-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 12px;
+}
+
+/* Firma en pie imprimible */
+.print-signature-image {
+    display: none;
+    width: 100%;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+.print-signature-image.has-signature {
+    display: block;
+}
+
+/* ============================================
+   Editor de Reporte (pre-impresión)
+   ============================================ */
+.report-editor-modal {
+    z-index: 2600;
+}
+
+.report-editor-modal[aria-hidden="false"] {
+    display: flex;
+}
+
+.report-editor-content {
+    width: 98vw;
+    max-width: 98vw;
+    height: 96vh;
+    max-height: 96vh;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.report-editor-title-wrap h3 {
+    margin: 0;
+}
+
+.report-editor-subtitle {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.report-editor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.report-editor-toolbar-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.report-editor-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow: hidden;
+    flex: 1;
+}
+
+.report-editor-hint {
+    font-size: 12px;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    padding: 8px 10px;
+}
+
+.report-editor-canvas {
+    flex: 1;
+    min-height: 320px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #f9fafb;
+    overflow-y: auto;
+    display: grid;
+    gap: 10px;
+}
+
+.report-editor-block {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+}
+
+.report-editor-block-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.report-editor-block-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.report-editor-block-handle {
+    cursor: grab;
+    -webkit-user-select: none;
+    user-select: none;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.report-editor-block-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+}
+
+.report-editor-block-actions .action-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+    min-width: auto;
+}
+
+.report-editor-block-content {
+    border-radius: 8px;
+    padding: 6px;
+    min-height: 30px;
+}
+
+.report-editor-block-content[contenteditable="true"]:focus {
+    outline: none;
+    background: #f8fafc;
+    box-shadow: inset 0 0 0 1px #cbd5e1;
+}
+
+.report-editor-block.is-dragging {
+    opacity: 0.6;
+    border-style: dashed;
+}
+
+.report-editor-empty {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    font-size: 14px;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+}
+
+.report-editor-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn-sm {
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    min-width: auto !important;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+/* Contenedor de salida editada para impresión */
+.report-editor-print-output {
+    display: none;
+    background: #fff;
+}
+
+/* ============================================
+   Editor de Reportes - Pestaña completa
+   ============================================ */
+.report-editor-fullpage {
+    min-height: calc(100vh - 200px);
+}
+
+.report-editor-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.report-editor-header h2 {
+    margin: 0 0 0.5rem 0;
+    color: #1e293b;
+}
+
+.report-editor-description {
+    color: #64748b;
+    margin: 0;
+    font-size: 14px;
+}
+
+.report-editor-selector h3 {
+    margin: 0 0 1rem 0;
+    font-size: 16px;
+    color: #334155;
+}
+
+.report-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-selector-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+
+.report-selector-card:hover {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.report-selector-card.active {
+    border-color: #3b82f6;
+    background: #dbeafe;
+}
+
+.report-selector-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.report-selector-info {
+    flex: 1;
+}
+
+.report-selector-info h4 {
+    margin: 0 0 0.25rem 0;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+.report-selector-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.report-editor-workspace {
+    margin-bottom: 1.5rem;
+}
+
+.report-editor-workspace-empty {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    color: #64748b;
+}
+
+.report-editor-workspace-empty .empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.report-editor-workspace-empty h3 {
+    margin: 0 0 0.5rem 0;
+    color: #475569;
+}
+
+.report-editor-workspace-empty p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.report-editor-toolbar-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.toolbar-section h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+}
+
+.toolbar-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.report-editor-canvas-main {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    min-height: 400px;
+    padding: 1rem;
+}
+
+.editor-canvas-hint {
+    font-size: 12px;
+    color: #64748b;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 1rem;
+}
+
+.editor-canvas-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.badge-editor {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* ============================================
+   MEJORA #18: Impresión Mejorada (Print-to-PDF)
+   Versión simple: solo ocultar nav/botones, preservar contenido
+   ============================================ */
+@media print {
+    /* Editor de reporte: ocultar modal y usar salida editada si aplica */
+    .report-editor-modal {
+        display: none !important;
+    }
+
+    .tab-content[data-editor-active="true"] .card {
+        display: none !important;
+    }
+
+    .tab-content[data-editor-active="true"] .report-editor-print-output {
+        display: block !important;
+    }
+    /* Ocultar elementos de navegación y UI */
+    .nav-tabs,
+    .header-screen-info,
+    .kpi-month-control,
+    #theme-toggle,
+    .sync-indicator,
+    .filter-btn,
+    #kpi-month-select,
+    #kpi-year-input {
+        display: none !important;
+    }
+
+    /* Botones de acción: ocultar */
+    button {
+        display: none !important;
+    }
+
+    /* Captura de firmas en pantalla: no imprimir (se imprime el pie de firmas) */
+    .report-signatures-box {
+        display: none !important;
+    }
+
+    /* Mostrar SOLO la pestaña activa */
+    .tab-content {
+        display: none !important;
+    }
+    
+    .tab-content.active {
+        display: block !important;
+        opacity: 1 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    /* Márgenes y espacios básicos */
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .container.main-content {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Tablas legibles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+        border: 1px solid #999;
+        padding: 6px;
+    }
+
+    /* Gráficas y contenido: mantener visible */
+    canvas,
+    .chart-container {
+        display: block !important;
+        margin: 10px 0;
+        max-width: 100%;
+    }
+
+    /* Cards visibles */
+    .card {
+        page-break-inside: avoid;
+        border: 1px solid #999;
+        margin-bottom: 10px;
+    }
+
+    /* Footer de impresión simple */
+    .print-footer {
+        display: block !important;
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 2px solid #000;
+    }
+
+    .print-signature-image {
+        display: block !important;
+        max-height: 80px;
+    }
+
+    /* Sin sombras en impresión */
+    * {
+        box-shadow: none !important;
+    }
+}
+
